@@ -1,217 +1,176 @@
 <div align="center">
-  <h1>Café Aroma & Sabor</h1>
+  <h1>☕ Café Aroma & Sabor</h1>
   <p><strong>Sistema de Gestão de Estoque Profissional</strong></p>
   <p>Desenvolvido com Java 21 e Spring Boot para o controle eficiente de inventário e movimentações.</p>
 </div>
 
-<hr>
+---
 
-## Descrição do Projeto
+## 📋 Descrição do Projeto
 
-O sistema Café Aroma & Sabor é uma solução robusta para gerenciamento de cafeterias, permitindo o controle rigoroso de insumos, produtos e usuários. A aplicação foca na usabilidade e na integridade dos dados, oferecendo alertas de estoque baixo e um histórico detalhado de todas as operações realizadas no sistema.
+O **Café Aroma & Sabor** é uma solução robusta para gerenciamento de cafeterias, permitindo o controle rigoroso de insumos, produtos e usuários. A aplicação foca na usabilidade e na integridade dos dados, oferecendo alertas de estoque baixo e um histórico detalhado de todas as operações realizadas no sistema.
 
-<hr>
+---
 
-## Funcionalidades Principais
+## ⚙️ Funcionalidades Principais
 
-*   **Controle de Acesso:** Sistema de autenticação seguro para gestão de usuários.
-*   **Gestão de Inventário:** Cadastro técnico de produtos com controle de validade e lote.
-*   **Monitoramento de Estoque:** Alertas visuais automáticos para produtos abaixo do estoque mínimo.
-*   **Fluxo de Movimentação:** Registro completo de entradas, saídas, devoluções e ajustes manuais.
-*   **Dashboard Administrativo:** Visão analítica em tempo real sobre o status atual do estoque.
+- **Controle de Acesso** — Sistema de autenticação seguro para gestão de usuários (login, cadastro, logout)
+- **Gestão de Inventário** — Cadastro técnico de produtos com controle de validade, lote e preço
+- **Monitoramento de Estoque** — Alertas visuais automáticos para produtos abaixo do estoque mínimo
+- **Fluxo de Movimentação** — Registro completo de entradas, saídas, devoluções e ajustes manuais
+- **Dashboard Administrativo** — Visão analítica em tempo real sobre o status atual do estoque
 
-<hr>
+---
 
-## Tecnologias e Especificações
+## 🛠️ Tecnologias e Especificações
 
-<table width="100%">
-  <tr>
-    <td width="50%"><strong>Linguagem</strong></td>
-    <td width="50%">Java 21</td>
-  </tr>
-  <tr>
-    <td><strong>Framework Base</strong></td>
-    <td>Spring Boot 3.5.14</td>
-  </tr>
-  <tr>
-    <td><strong>Persistência de Dados</strong></td>
-    <td>Spring Data JPA / Hibernate</td>
-  </tr>
-  <tr>
-    <td><strong>Banco de Dados</strong></td>
-    <td>MySQL 8.x</td>
-  </tr>
-  <tr>
-    <td><strong>Front-end Engine</strong></td>
-    <td>Thymeleaf (Server-side rendering)</td>
-  </tr>
-  <tr>
-    <td><strong>Gerenciamento de Dependências</strong></td>
-    <td>Maven</td>
-  </tr>
-</table>
+| Tecnologia | Especificação |
+|------------|--------------|
+| Linguagem | Java 21 |
+| Framework | Spring Boot 3.5.14 |
+| Persistência | Spring Data JPA / Hibernate |
+| Banco de Dados | MySQL 8.x |
+| Front-end | Thymeleaf (Server-side rendering) |
+| Build | Maven |
 
-<hr>
+---
 
-## Estrutura de Diretórios
+## 🚀 Como Executar
 
-```text
-src/main/java/cafe/
-├── controller/    # Gerenciamento de rotas e requisições
-├── model/         # Definição de entidades e regras de negócio
-├── repository/    # Interfaces de comunicação com o banco de dados
-└── resources/     # Configurações, scripts SQL e templates HTML
+### Pré-requisitos
+
+- JDK 21+
+- MySQL Server 8.0+
+- Maven
+
+### Passos
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/vitorjohnny/Caf-Aroma-e-Sabor.git
+
+# 2. Crie o banco de dados no MySQL
+mysql -u root -p -e "CREATE DATABASE cafeteria;"
+
+# 3. Configure as credenciais em src/main/resources/application.properties
+spring.datasource.url=jdbc:mysql://localhost:3306/cafeteria
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+
+# 4. Execute a aplicação
+mvn spring-boot:run
 ```
 
-<br>
+Acesse: [http://localhost:8080](http://localhost:8080)
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuração e Instalação - Café Aroma e Sabor</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-        }
-        h1, h2, h3 {
-            border-bottom: 1px solid #eaecef;
-            padding-bottom: 0.3em;
-        }
-        code {
-            background-color: rgba(27, 31, 35, 0.05);
-            border-radius: 3px;
-            padding: 0.2em 0.4em;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-        }
-        pre {
-            background-color: #f6f8fa;
-            border-radius: 3px;
-            padding: 16px;
-            overflow: auto;
-            line-height: 1.45;
-        }
-        pre code {
-            background-color: transparent;
-            padding: 0;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-        }
-        table th, table td {
-            border: 1px solid #dfe2e5;
-            padding: 6px 13px;
-        }
-        table tr:nth-child(even) {
-            background-color: #f6f8fa;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #6a737d;
-        }
-        hr {
-            height: 0.25em;
-            padding: 0;
-            margin: 24px 0;
-            background-color: #e1e4e8;
-            border: 0;
-        }
-    </style>
-</head>
-<body>
+---
 
-    <section>
-        <h2>Configuração e Instalação</h2>
-        
-        <h3>Pré-requisitos</h3>
-        <ul>
-            <li>JDK 21 ou superior</li>
-            <li>MySQL Server 8.0+</li>
-            <li>Maven</li>
-        </ul>
+## 📁 Estrutura do Projeto
 
-        <h3>Passos para Execução</h3>
-        
-        <h4>Clonagem do Repositório</h4>
-        <pre><code>git clone https://github.com/vitorjohnny/Caf-Aroma-e-Sabor.git</code></pre>
+```
+cafe/
+├── src/main/java/cafe/
+│   ├── CafeApplication.java            # Ponto de entrada da aplicação
+│   ├── controller/
+│   │   ├── AuthController.java         # Login, cadastro e logout
+│   │   ├── HomeController.java         # Dashboard e estoque
+│   │   └── ProdutoController.java      # CRUD de produtos
+│   ├── model/
+│   │   ├── Movimentacao.java           # Entidade de movimentação
+│   │   ├── Produto.java                # Entidade de produto
+│   │   ├── TipoMovimentacao.java       # Enum (ENTRADA, SAIDA, DEVOLUCAO, AJUSTE)
+│   │   └── Usuario.java                # Entidade de usuário
+│   └── repository/
+│       ├── MovimentacaoRepository.java
+│       ├── ProdutoRepository.java
+│       └── UsuarioRepository.java
+├── src/main/resources/
+│   ├── application.properties          # Configuração do banco
+│   ├── db_schema.sql                   # Script SQL completo
+│   ├── static/css/style.css            # Estilos do sistema
+│   └── templates/                      # Páginas HTML (Thymeleaf)
+│       ├── index.html                  # Página de login
+│       ├── welcome.html                # Landing page
+│       ├── principal.html              # Dashboard
+│       ├── estoque.html                # Gestão de estoque
+│       ├── cadastro-usuario.html       # Cadastro de usuário
+│       └── produto/
+│           ├── cadastro.html           # Formulário de produto
+│           └── lista.html              # Listagem de produtos
+└── pom.xml                             # Dependências Maven
+```
 
-        <h4>Configuração do Banco de Dados</h4>
-        <p>Crie um banco de dados chamado <code>cafeteria</code> no seu servidor MySQL.</p>
+---
 
-        <h4>Ajuste de Propriedades</h4>
-        <p>Configure o arquivo <code>src/main/resources/application.properties</code> com suas credenciais locais:</p>
-<pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/cafeteria
-spring.datasource.username=seu_usuario
-spring.datasource.password=sua_senha</code></pre>
+## 🗄️ Modelo de Dados
 
-        <h4>Inicialização</h4>
-        <pre><code>mvn spring-boot:run</code></pre>
-    </section>
+```
+┌──────────┐         ┌────────────────┐         ┌──────────┐
+│ USUARIO  │1──N    │ MOVIMENTACAO   │N──1    │ PRODUTO  │
+└──────────┘         └────────────────┘         └──────────┘
+```
 
-    <hr>
+### Entidades
 
-    <section>
-        <h2>Endpoints da Aplicação</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Método</th>
-                    <th>Rota</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>GET</td>
-                    <td><code>/login</code></td>
-                    <td>Acesso ao sistema</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td><code>/principal</code></td>
-                    <td>Dashboard de indicadores</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td><code>/produtos</code></td>
-                    <td>Listagem geral de itens</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td><code>/produtos/salvar</code></td>
-                    <td>Persistência de novos produtos</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td><code>/estoque</code></td>
-                    <td>Central de movimentações</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+| Tabela | Campos principais |
+|--------|-------------------|
+| **USUARIO** | id (PK), email (UNIQUE), nome, senha |
+| **PRODUTO** | id (PK), nome, descricao, categoria, unidadeMedida, preco, estoque, estoqueMinimo, lote, dataValidade |
+| **MOVIMENTACAO** | id (PK), tipoMovimentacao, quantidade, dataMov, observacao, produto_id (FK), usuario_id (FK) |
 
-    <hr>
+### Tipos de Movimentação
 
-    <footer>
-        <h3>Autor</h3>
-        <p><strong>Vitor Johnny</strong><br>
-        <a href="https://github.com/vitorjohnny" target="_blank">Perfil no GitHub</a></p>
-        
-        <div class="footer">
-            <hr>
-            <p>Este projeto está sob a licença MIT.</p>
-        </div>
-    </footer>
+| Tipo | Descrição | Efeito no Estoque |
+|------|-----------|-------------------|
+| ENTRADA | Entrada de estoque (compra/produção) | Aumenta (+) |
+| SAIDA | Saída de estoque (venda/consumo) | Diminui (-) |
+| DEVOLUCAO | Devolução de cliente | Aumenta (+) |
+| AJUSTE | Ajuste de inventário | +/- conforme necessário |
 
-</body>
-</html>
+---
+
+## 🌐 Endpoints da Aplicação
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET | `/` | Landing page |
+| GET | `/login` | Formulário de login |
+| POST | `/login` | Autenticar usuário |
+| GET | `/cadastro` | Formulário de cadastro |
+| POST | `/cadastro` | Criar novo usuário |
+| GET | `/logout` | Encerrar sessão |
+| GET | `/principal` | Dashboard administrativo |
+| GET | `/estoque` | Central de movimentações |
+| GET | `/produtos` | Listagem de produtos |
+| GET | `/produtos/novo` | Cadastro de novo produto |
+| POST | `/produtos/salvar` | Salvar produto |
+| GET | `/produtos/excluir/{id}` | Excluir produto |
+
+---
+
+## 📄 Script SQL
+
+O arquivo `src/main/resources/db_schema.sql` contém o script completo para criar as tabelas e inserir dados de exemplo. O Hibernate também pode criar as tabelas automaticamente com `spring.jpa.hibernate.ddl-auto=update`.
+
+---
+
+## 📊 Diagramas DER
+
+- `DER_MOVIMENTACAO.md` — DER focado na tabela de movimentação
+- `DER_PRODUTO_MOVIMENTACAO.md` — DER completo do sistema
+- `DER_MERMAID.md` — Diagramas interativos em Mermaid
+- `DER_MYSQL.md` — Documentação MySQL detalhada
+
+---
+
+## 👨‍🍳 Autor
+
+**Vitor Johnny**
+
+[![GitHub](https://img.shields.io/badge/GitHub-vitorjohnny-181717?style=flat-square&logo=github)](https://github.com/vitorjohnny)
+
+---
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
