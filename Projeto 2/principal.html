@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Café - Início</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>Almoxarifado</h1>
+      <p>Cafeteria</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="principal.html" class="active">Início</a>
+      <a href="cadastro.html">Cadastro de Produto</a>
+      <a href="estoque.html">Gestão de Estoque</a>
+    </nav>
+    <div class="sidebar-settings">
+      <input type="checkbox" id="settings-toggle" class="settings-checkbox" />
+      <label for="settings-toggle" class="gear-button" title="Abrir configurações">
+        <span class="gear-icon">⚙️</span>
+        Configurações
+      </label>
+      <div class="settings-panel">
+        <a href="welcome.html" class="button logout">Logout</a>
+        <a href="index.html" class="button secondary">Trocar conta</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="page-header">
+      <div>
+        <span class="welcome-label">Usuário logado:</span>
+        <strong>Nome do Colaborador</strong>
+      </div>
+      <div class="header-actions">
+        <a href="welcome.html" class="button logout">Logout</a>
+      </div>
+    </header>
+
+    <section class="dashboard-overview">
+      <h2>Bem-vindo ao sistema de gestão de estoque</h2>
+      <p>Monitore o estoque, cadastre produtos e registre movimentações em um só lugar.</p>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">67</div>
+          <div class="stat-label">Produtos cadastrados</div>
+          <div class="stat-change">+3 esta semana</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Itens com estoque baixo</div>
+          <div class="stat-change alert"> Atenção</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Próximos do vencimento</div>
+          <div class="stat-change alert"> Verificar</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">156</div>
+          <div class="stat-label">Movimentações este mês</div>
+          <div class="stat-change">↑ +28% vs mês anterior</div>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <article class="info-card">
+          <h3>Últimas movimentações</h3>
+          <ul class="activity-list">
+            <li><span class="badge entrada">Entrada</span> Café Premium - 50kg</li>
+            <li><span class="badge saida">Saída</span> Grãos Gourmet - 12kg</li>
+            <li><span class="badge entrada">Entrada</span> Cappuccino Mix - 30 pacotes</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Produtos com alerta</h3>
+          <ul class="alert-list">
+            <li>🔴 Café Expresso (vence em 3 dias)</li>
+            <li>🟡 Leite em pó (estoque baixo)</li>
+            <li>🔴 Chocolate Premium (vence em 1 dia)</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Ações rápidas</h3>
+          <p>Acesse as principais funcionalidades do sistema.</p>
+          <div class="quick-actions">
+            <a href="cadastro.html" class="button small">Novo Produto</a>
+            <a href="estoque.html" class="button small secondary">Registrar Movimento</a>
+          </div>
+        </article>
+      </div>
+    </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Café - Gestão de Estoque</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>Almoxarifado</h1>
+      <p>Cafeteria</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a th:href="@{/principal}">Início</a>
+      <a th:href="@{/produtos/novo}">Cadastro de Produto</a>
+      <a th:href="@{/estoque}" class="active">Gestão de Estoque</a>
+    </nav>
+    <div class="sidebar-settings">
+      <input type="checkbox" id="settings-toggle" class="settings-checkbox" />
+      <label for="settings-toggle" class="gear-button" title="Abrir configurações">
+        <span class="gear-icon">⚙️</span>
+        Configurações
+      </label>
+      <div class="settings-panel">
+        <a th:href="@{/logout}" class="button logout">Logout</a>
+        <a th:href="@{/login}" class="button secondary">Trocar conta</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="page-header">
+      <div>
+        <span class="welcome-label">Usuário logado:</span>
+        <strong th:text="${session.usuarioLogado != null ? session.usuarioLogado.nome : 'Visitante'}">Nome do Colaborador</strong>
+      </div>
+      <div class="header-actions">
+        <a th:href="@{/logout}" class="button logout">Logout</a>
+      </div>
+    </header>
+
+    <section class="page-section">
+      <h2>Gestão de Estoque</h2>
+      <p>Registre entradas e saídas com lote, validade e quantidade.</p>
+
+      <div class="form-grid">
+        <form class="card form-card" th:action="@{/estoque}" method="post">
+          <h3>Nova movimentação</h3>
+          <label>Produto</label>
+          <select name="produtoId">
+            <option selected disabled>Selecione um produto</option>
+            <option th:each="p : ${produtos}" th:value="${p.id}" th:text="${p.nome}"></option>
+          </select>
+          <label>Tipo de movimentação</label>
+          <select name="tipo">
+            <option value="ENTRADA">Entrada</option>
+            <option value="SAIDA">Saída</option>
+          </select>
+          <label>Quantidade</label>
+          <input type="number" name="quantidade" placeholder="Quantidade" />
+          <label>Data da movimentação</label>
+          <input type="date" name="data" />
+          <label>Colaborador responsável</label>
+          <input type="text" name="responsavel" placeholder="Nome do responsável" />
+          <button type="submit">Registrar</button>
+          <p class="note">Movimentação apenas ilustrativa neste protótipo.</p>
+        </form>
+
+        <div class="card table-card">
+          <div class="table-header">
+            <h3>Produtos cadastrados</h3>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Estoque</th>
+                <th>Validade</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="p : ${produtos}">
+                <td th:text="${p.nome}">Café Orgânico</td>
+                <td th:text="${p.categoria}">Cafés</td>
+                <td th:text="${p.estoque}">42</td>
+                <td th:text="${p.dataValidade}">2026-09-10</td>
+                <td>
+                  <span th:if="${p.estoque != null and p.estoqueMinimo != null and p.estoque < p.estoqueMinimo}" style="color:#d4553d;">Estoque baixo</span>
+                  <span th:unless="${p.estoque != null and p.estoqueMinimo != null and p.estoque < p.estoqueMinimo}">OK</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

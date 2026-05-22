@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Café - Gestão de Estoque</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <h1>Almoxarifado</h1>
+      <p>Cafeteria</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="principal.html">Início</a>
+      <a href="cadastro.html">Cadastro de Produto</a>
+      <a href="estoque.html" class="active">Gestão de Estoque</a>
+    </nav>
+    <div class="sidebar-settings">
+      <input type="checkbox" id="settings-toggle" class="settings-checkbox" />
+      <label for="settings-toggle" class="gear-button" title="Abrir configurações">
+        <span class="gear-icon">⚙️</span>
+        Configurações
+      </label>
+      <div class="settings-panel">
+        <a href="welcome.html" class="button logout">Logout</a>
+        <a href="index.html" class="button secondary">Trocar conta</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="page-header">
+      <div>
+        <span class="welcome-label">Usuário logado:</span>
+        <strong>Nome do Colaborador</strong>
+      </div>
+      <div class="header-actions">
+        <a href="welcome.html" class="button logout">Logout</a>
+      </div>
+    </header>
+
+    <section class="page-section">
+      <h2>Gestão de Estoque</h2>
+      <p>Registre entradas e saídas com lote, validade e quantidade.</p>
+
+      <div class="form-grid">
+        <form class="card form-card">
+          <h3>Nova movimentação</h3>
+          <label>Produto</label>
+          <select>
+            <option selected>Selecione um produto</option>
+            <option>Café Orgânico</option>
+            <option>Grãos Gourmet</option>
+          </select>
+          <label>Tipo de movimentação</label>
+          <select>
+            <option selected>Entrada</option>
+            <option>Saída</option>
+          </select>
+          <label>Quantidade</label>
+          <input type="number" placeholder="Quantidade" />
+          <label>Data da movimentação</label>
+          <input type="date" />
+          <label>Colaborador responsável</label>
+          <input type="text" placeholder="Nome do responsável" />
+          <button type="submit">Registrar</button>
+          <p class="note">Movimentação apenas ilustrativa neste protótipo.</p>
+        </form>
+
+        <div class="card table-card">
+          <div class="table-header">
+            <h3>Produtos cadastrados</h3>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Estoque</th>
+                <th>Última movimentação</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Café Orgânico</td>
+                <td>Cafés</td>
+                <td>42</td>
+                <td>2026-05-10</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Grãos Gourmet</td>
+                <td>Grãos</td>
+                <td>12</td>
+                <td>2026-05-12</td>
+                <td>Próximo do mínimo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

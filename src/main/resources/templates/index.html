@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Café - Login</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h1>Login</h1>
+      <p>Entre no sistema para gerenciar o almoxarifado da cafeteria.</p>
+
+      <div th:if="${erro}" style="background:#f4d4d4;color:#7e2d2d;padding:12px;border-radius:10px;margin-bottom:18px;font-size:14px;" th:text="${erro}"></div>
+
+      <form th:action="@{/login}" method="post">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" name="email" placeholder="seu@email.com" required />
+
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required />
+
+        <button type="submit">Entrar</button>
+      </form>
+
+      <p class="note">
+        Não tem conta? <a th:href="@{/cadastro}" style="color:#6f4e37;font-weight:600;">Cadastre-se</a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>
