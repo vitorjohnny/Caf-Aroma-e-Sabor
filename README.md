@@ -1,43 +1,43 @@
 <div align="center">
-  <h1>☕ Café Aroma & Sabor</h1>
-  <p><strong>Sistema de Gestão de Estoque Profissional</strong></p>
-  <p>Desenvolvido com Java 21 e Spring Boot para o controle eficiente de inventário e movimentações.</p>
+  <h1>Cafe Aroma & Sabor</h1>
+  <p><strong>Sistema de Gestao de Estoque Profissional</strong></p>
+  <p>Desenvolvido com Java 21 e Spring Boot para o controle eficiente de inventario e movimentacoes.</p>
 </div>
 
 ---
 
-## 📋 Descrição do Projeto
+## Descricao do Projeto
 
-O **Café Aroma & Sabor** é uma solução robusta para gerenciamento de cafeterias, permitindo o controle rigoroso de insumos, produtos e usuários. A aplicação foca na usabilidade e na integridade dos dados, oferecendo alertas de estoque baixo e um histórico detalhado de todas as operações realizadas no sistema.
-
----
-
-## ⚙️ Funcionalidades Principais
-
-- **Controle de Acesso** — Sistema de autenticação seguro para gestão de usuários (login, cadastro, logout)
-- **Gestão de Inventário** — Cadastro técnico de produtos com controle de validade, lote e preço
-- **Monitoramento de Estoque** — Alertas visuais automáticos para produtos abaixo do estoque mínimo
-- **Fluxo de Movimentação** — Registro completo de entradas, saídas, devoluções e ajustes manuais
-- **Dashboard Administrativo** — Visão analítica em tempo real sobre o status atual do estoque
+O **Cafe Aroma & Sabor** e uma solucao robusta para gerenciamento de cafeterias, permitindo o controle rigoroso de insumos, produtos e usuarios. A aplicacao foca na usabilidade e na integridade dos dados, oferecendo alertas de estoque baixo e um historico detalhado de todas as operacoes realizadas no sistema.
 
 ---
 
-## 🛠️ Tecnologias e Especificações
+## Funcionalidades Principais
 
-| Tecnologia | Especificação |
+- **Controle de Acesso** — Sistema de autenticacao seguro para gestao de usuarios (login, cadastro, logout)
+- **Gestao de Inventario** — Cadastro tecnico de produtos com controle de validade, lote e preco
+- **Monitoramento de Estoque** — Alertas visuais automaticos para produtos abaixo do estoque minimo
+- **Fluxo de Movimentacao** — Registro completo de entradas, saidas, devolucoes e ajustes manuais
+- **Dashboard Administrativo** — Visao analitica em tempo real sobre o status atual do estoque
+
+---
+
+## Tecnologias e Especificacoes
+
+| Tecnologia | Especificacao |
 |------------|--------------|
 | Linguagem | Java 21 |
 | Framework | Spring Boot 3.5.14 |
-| Persistência | Spring Data JPA / Hibernate |
+| Persistencia | Spring Data JPA / Hibernate |
 | Banco de Dados | MySQL 8.x |
 | Front-end | Thymeleaf (Server-side rendering) |
 | Build | Maven |
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
-### Pré-requisitos
+### Pre-requisitos
 
 - JDK 21+
 - MySQL Server 8.0+
@@ -46,7 +46,7 @@ O **Café Aroma & Sabor** é uma solução robusta para gerenciamento de cafeter
 ### Passos
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone o repositorio
 git clone https://github.com/vitorjohnny/Caf-Aroma-e-Sabor.git
 
 # 2. Crie o banco de dados no MySQL
@@ -57,7 +57,7 @@ spring.datasource.url=jdbc:mysql://localhost:3306/cafeteria
 spring.datasource.username=seu_usuario
 spring.datasource.password=sua_senha
 
-# 4. Execute a aplicação
+# 4. Execute a aplicacao
 mvn spring-boot:run
 ```
 
@@ -65,49 +65,49 @@ Acesse: [http://localhost:8080](http://localhost:8080)
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 cafe/
 ├── src/main/java/cafe/
-│   ├── CafeApplication.java            # Ponto de entrada da aplicação
+│   ├── CafeApplication.java            # Ponto de entrada da aplicacao
 │   ├── controller/
 │   │   ├── AuthController.java         # Login, cadastro e logout
 │   │   ├── HomeController.java         # Dashboard e estoque
 │   │   └── ProdutoController.java      # CRUD de produtos
 │   ├── model/
-│   │   ├── Movimentacao.java           # Entidade de movimentação
+│   │   ├── Movimentacao.java           # Entidade de movimentacao
 │   │   ├── Produto.java                # Entidade de produto
 │   │   ├── TipoMovimentacao.java       # Enum (ENTRADA, SAIDA, DEVOLUCAO, AJUSTE)
-│   │   └── Usuario.java                # Entidade de usuário
+│   │   └── Usuario.java                # Entidade de usuario
 │   └── repository/
 │       ├── MovimentacaoRepository.java
 │       ├── ProdutoRepository.java
 │       └── UsuarioRepository.java
 ├── src/main/resources/
-│   ├── application.properties          # Configuração do banco
+│   ├── application.properties          # Configuracao do banco
 │   ├── db_schema.sql                   # Script SQL completo
 │   ├── static/css/style.css            # Estilos do sistema
-│   └── templates/                      # Páginas HTML (Thymeleaf)
-│       ├── index.html                  # Página de login
+│   └── templates/                      # Paginas HTML (Thymeleaf)
+│       ├── index.html                  # Pagina de login
 │       ├── welcome.html                # Landing page
 │       ├── principal.html              # Dashboard
-│       ├── estoque.html                # Gestão de estoque
-│       ├── cadastro-usuario.html       # Cadastro de usuário
+│       ├── estoque.html                # Gestao de estoque
+│       ├── cadastro-usuario.html       # Cadastro de usuario
 │       └── produto/
-│           ├── cadastro.html           # Formulário de produto
+│           ├── cadastro.html           # Formulario de produto
 │           └── lista.html              # Listagem de produtos
-└── pom.xml                             # Dependências Maven
+└── pom.xml                             # Dependencias Maven
 ```
 
 ---
 
-## 🗄️ Modelo de Dados
+## Modelo de Dados
 
 ```
-┌──────────┐         ┌────────────────┐         ┌──────────┐
-│ USUARIO  │1──N    │ MOVIMENTACAO   │N──1    │ PRODUTO  │
-└──────────┘         └────────────────┘         └──────────┘
++----------+         +----------------+         +----------+
+| USUARIO  |1---N    | MOVIMENTACAO   |N---1    | PRODUTO  |
++----------+         +----------------+         +----------+
 ```
 
 ### Entidades
@@ -118,29 +118,29 @@ cafe/
 | **PRODUTO** | id (PK), nome, descricao, categoria, unidadeMedida, preco, estoque, estoqueMinimo, lote, dataValidade |
 | **MOVIMENTACAO** | id (PK), tipoMovimentacao, quantidade, dataMov, observacao, produto_id (FK), usuario_id (FK) |
 
-### Tipos de Movimentação
+### Tipos de Movimentacao
 
-| Tipo | Descrição | Efeito no Estoque |
+| Tipo | Descricao | Efeito no Estoque |
 |------|-----------|-------------------|
-| ENTRADA | Entrada de estoque (compra/produção) | Aumenta (+) |
-| SAIDA | Saída de estoque (venda/consumo) | Diminui (-) |
-| DEVOLUCAO | Devolução de cliente | Aumenta (+) |
-| AJUSTE | Ajuste de inventário | +/- conforme necessário |
+| ENTRADA | Entrada de estoque (compra/producao) | Aumenta (+) |
+| SAIDA | Saida de estoque (venda/consumo) | Diminui (-) |
+| DEVOLUCAO | Devolucao de cliente | Aumenta (+) |
+| AJUSTE | Ajuste de inventario | +/- conforme necessario |
 
 ---
 
-## 🌐 Endpoints da Aplicação
+## Endpoints da Aplicacao
 
-| Método | Rota | Descrição |
+| Metodo | Rota | Descricao |
 |--------|------|-----------|
 | GET | `/` | Landing page |
-| GET | `/login` | Formulário de login |
-| POST | `/login` | Autenticar usuário |
-| GET | `/cadastro` | Formulário de cadastro |
-| POST | `/cadastro` | Criar novo usuário |
-| GET | `/logout` | Encerrar sessão |
+| GET | `/login` | Formulario de login |
+| POST | `/login` | Autenticar usuario |
+| GET | `/cadastro` | Formulario de cadastro |
+| POST | `/cadastro` | Criar novo usuario |
+| GET | `/logout` | Encerrar sessao |
 | GET | `/principal` | Dashboard administrativo |
-| GET | `/estoque` | Central de movimentações |
+| GET | `/estoque` | Central de movimentacoes |
 | GET | `/produtos` | Listagem de produtos |
 | GET | `/produtos/novo` | Cadastro de novo produto |
 | POST | `/produtos/salvar` | Salvar produto |
@@ -148,29 +148,29 @@ cafe/
 
 ---
 
-## 📄 Script SQL
+## Script SQL
 
-O arquivo `src/main/resources/db_schema.sql` contém o script completo para criar as tabelas e inserir dados de exemplo. O Hibernate também pode criar as tabelas automaticamente com `spring.jpa.hibernate.ddl-auto=update`.
+O arquivo `src/main/resources/db_schema.sql` contem o script completo para criar as tabelas e inserir dados de exemplo. O Hibernate tambem pode criar as tabelas automaticamente com `spring.jpa.hibernate.ddl-auto=update`.
 
 ---
 
-## 📊 Diagramas DER
+## Diagramas DER
 
-- `DER_MOVIMENTACAO.md` — DER focado na tabela de movimentação
+- `DER_MOVIMENTACAO.md` — DER focado na tabela de movimentacao
 - `DER_PRODUTO_MOVIMENTACAO.md` — DER completo do sistema
 - `DER_MERMAID.md` — Diagramas interativos em Mermaid
-- `DER_MYSQL.md` — Documentação MySQL detalhada
+- `DER_MYSQL.md` — Documentacao MySQL detalhada
 
 ---
 
-## 👨‍🍳 Autor
+## Autor
 
 **Vitor Johnny**
 
-[![GitHub](https://img.shields.io/badge/GitHub-vitorjohnny-181717?style=flat-square&logo=github)](https://github.com/vitorjohnny)
+[GitHub](https://github.com/vitorjohnny)
 
 ---
 
-## 📝 Licença
+## Licenca
 
-Este projeto está sob a licença MIT.
+Este projeto esta sob a licenca MIT.
