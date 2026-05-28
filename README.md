@@ -171,6 +171,4 @@ O arquivo `src/main/resources/db_schema.sql` contem o script completo para criar
 
 ---
 
-## Licenca
 
-Este projeto esta sob a licenca MIT.
